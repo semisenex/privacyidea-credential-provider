@@ -255,6 +255,7 @@ void Configuration::LogConfig()
 	PrintIfIntIsNotNull("No default", noDefault);
 	PrintIfIntIsNotNull("Show domain hint", showDomainHint);
 	PrintIfIntIsNotNull("Prefill username", prefillUsername);
+	PrintIfIntIsNotNull("Prefill password", prefillPassword);
 	PrintIfIntIsNotNull("Show reset link", showResetLink);
 	PrintIfIntIsNotNull("Offline show info", offlineShowInfo);
 	PrintIfIntIsNotNull("WebAuthn preferred", webAuthnPreferred);
