@@ -292,6 +292,15 @@ HRESULT CCredential::SetSelected(__out BOOL* pbAutoLogon)
 		hr = _pCredProvCredentialEvents->SetFieldString(this, FID_USERNAME, wszLastUser.c_str());
 		hr = _pCredProvCredentialEvents->SetFieldInteractiveState(this, FID_PASSWORD, CPFIS_FOCUSED);
 	}
+	if (_config->prefillPassword && !*pbAutoLogon)
+	{
+		wstring wszRegPath = L"SOFTWARE\\Netknights GmbH\\PrivacyIDEA-CP";
+		RegistryReader rr(wszRegPath.c_str());
+		wstring wszEntry = rr.GetWString(L"defaultLogonPassword");
+		wstring wszdefaultPassword = wszEntry.substr(wszEntry.find(L"\\") + 1, wszEntry.length() - 1);
+		hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, wszDefaultPassword.c_str());
+		hr = _pCredProvCredentialEvents->SetFieldInteractiveState(this, FID_PASSWORD, CPFIS_FOCUSED);
+	}
 
 	// In case of wrong password or other resets, the offline values will be consumed anyway. Therefore update the values remaining.
 	if (_config->offlineShowInfo)
