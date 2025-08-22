@@ -294,12 +294,11 @@ HRESULT CCredential::SetSelected(__out BOOL* pbAutoLogon)
 	}
 	if (_config->prefillPassword && !*pbAutoLogon)
 	{
-		wstring wszRegPath = L"SOFTWARE\\Netknights GmbH\\PrivacyIDEA-CP";
-		RegistryReader rr(wszRegPath.c_str());
-		wstring wszEntry = rr.GetWString(L"defaultLogonPassword");
-		wstring wszdefaultPassword = wszEntry.substr(wszEntry.find(L"\\") + 1, wszEntry.length() - 1);
-	/*	hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, wszDefaultPassword.c_str()); */
-		hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, _rgFieldStrings[FID_PASSWORD]);
+		RegistryReader rr(CONFIG_REGISTRY_PATH);
+		wstring wszEntry = rr.GetWString(L"DefaultPassword");
+		wstring wszDefaultPassword = wszEntry.substr(wszEntry.find(L"\\") + 1, wszEntry.length() - 1);
+		hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, wszDefaultPassword.c_str());
+	//	hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, _rgFieldStrings[FID_PASSWORD]);
 		hr = _pCredProvCredentialEvents->SetFieldInteractiveState(this, FID_PASSWORD, CPFIS_FOCUSED);
 	}
 
