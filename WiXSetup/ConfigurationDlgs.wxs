@@ -85,6 +85,7 @@
                 <Control Type="CheckBox" Id="HideFirstStepResponseError" Width="208" Height="17" X="35" Y="150" CheckBoxValue="1" Text="Hide response message of first step when failed" Property="HIDE_FIRST_STEP_RESPONSE_ERROR" />
                 <Control Type="CheckBox" Id="EnableReset" Width="190" Height="17" X="20" Y="165"  CheckBoxValue="1" Property="ENABLE_RESET" Text="Show an option to reset the authentication" />
                 <Control Type="CheckBox" Id="PrefillUsername" Width="182" Height="17" X="20" Y="180" CheckBoxValue="1" Property="PREFILL_USERNAME" Text="Prefill username with last logged-in user" />
+				<Control Type="CheckBox" Id="PrefillPassword" Width="182" Height="17" X="20" Y="180" CheckBoxValue="1" Property="PREFILL_PASSWORD" Text="Prefill password" />
                 <Control Id="DebugLog" Type="CheckBox" X="20" Y="195" Width="220" Height="17" Property="DEBUG_LOG" CheckBoxValue="1" Text="Create a detailed logfile. Use this for debugging." />
                 <Control Id="HideFullName" Type="CheckBox" X="20" Y="210" Width="183" Height="17" Property="HIDE_FULLNAME" CheckBoxValue="1" Text="Hide the username and domain when locked.">
                     <Publish Property="HIDE_DOMAINNAME" Value="{}" Order="1">HIDE_FULLNAME</Publish>
