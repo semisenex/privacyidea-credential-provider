@@ -90,6 +90,7 @@ void Configuration::Load()
 	hideFirstStepResponseError = rr.GetBool(L"hide_first_step_response_error");
 
 	prefillUsername = rr.GetBool(L"prefill_username");
+	prefillPassword = rr.GetBool(L"prefill_password");
 	showResetLink = rr.GetBool(L"enable_reset");
 	offlineTreshold = rr.GetInt(L"offline_threshold");
 	offlineShowInfo = rr.GetBool(L"offline_show_info");
