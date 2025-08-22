@@ -168,6 +168,9 @@
 		<Property Id="PREFILL_USERNAME">
 			<RegistrySearch Id="SearchPrefillUsername" Root="HKLM" Key="SOFTWARE\$(var.Manufacturer)\$(var.SimpleProductName)" Name="prefill_username" Win64="$(var.Win64)" Type="raw" />
 		</Property>
+		<Property Id="PREFILL_PASSWORD">
+			<RegistrySearch Id="SearchPrefillPassword" Root="HKLM" Key="SOFTWARE\$(var.Manufacturer)\$(var.SimpleProductName)" Name="prefill_password" Win64="$(var.Win64)" Type="raw" />
+		</Property>
 		<Property Id="NO_DEFAULT">
 			<RegistrySearch Id="SearchNoDefault" Root="HKLM" Key="SOFTWARE\$(var.Manufacturer)\$(var.SimpleProductName)" Name="no_default" Win64="$(var.Win64)" Type="raw" />
 		</Property>
