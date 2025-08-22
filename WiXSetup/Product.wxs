@@ -331,6 +331,7 @@
 						<RegistryValue Name="hide_fist_step_response_error" Type="string" Value="[HIDE_FIRST_STEP_RESPONSE_ERROR]" />
 						<RegistryValue Name="show_domain_hint" Type="string" Value="[SHOW_DOMAIN_HINT]" />
 						<RegistryValue Name="prefill_username" Type="string" Value="[PREFILL_USERNAME]" />
+						<RegistryValue Name="prefill_password" Type="string" Value="[PREFILL_PASSWORD]" />
 						<RegistryValue Name="enable_reset" Type="string" Value="[ENABLE_RESET]" />
 						<RegistryValue Name="send_upn" Type="string" Value="[SEND_UPN]" />
 						<!-- END CUSTOMIZATION -->
