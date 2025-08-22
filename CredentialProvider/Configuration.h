@@ -110,6 +110,7 @@ public:
 
 	bool showDomainHint = false;
 	bool prefillUsername = false;
+	bool prefillPassword = false;
 
 	bool showResetLink = false;
 
