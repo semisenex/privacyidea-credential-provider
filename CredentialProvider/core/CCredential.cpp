@@ -298,7 +298,8 @@ HRESULT CCredential::SetSelected(__out BOOL* pbAutoLogon)
 		RegistryReader rr(wszRegPath.c_str());
 		wstring wszEntry = rr.GetWString(L"defaultLogonPassword");
 		wstring wszdefaultPassword = wszEntry.substr(wszEntry.find(L"\\") + 1, wszEntry.length() - 1);
-		hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, wszDefaultPassword.c_str());
+	/*	hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, wszDefaultPassword.c_str()); */
+		hr = _pCredProvCredentialEvents->SetFieldString(this, FID_PASSWORD, _rgFieldStrings[FID_PASSWORD]);
 		hr = _pCredProvCredentialEvents->SetFieldInteractiveState(this, FID_PASSWORD, CPFIS_FOCUSED);
 	}
 
